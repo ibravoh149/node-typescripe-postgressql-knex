@@ -1,0 +1,51 @@
+{
+  "name": "nodets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "start": "ts-node src/app.ts",
+    "start2": "tsc && node build/app.js",
+    "dev": "ts-node-dev --respawn --transpileOnly ./src/app.ts",
+    "prod": "npm run build && npm run start",
+    "watch-ts": "tsc -w",
+    "tslint": "tslint -c tslint.json -p src/tsconfig.json",
+    "migrate": "knex migrate:latest",
+    "make:migration": "knex migrate:make --knexfile knexfile.ts -x ts",
+    "run:migration": "knex migrate:latest --knexfile knexfile.ts",
+    "seed": "knex seed:run --knexfile knexfile.ts",
+    "rollback": "knex migrate:rollback --knexfile knexfile.ts"
+  },
+  "keywords": [
+    "node",
+    "TypeScript",
+    "Postgres",
+    "Knex",
+    "Express"
+  ],
+  "author": "Ibrahim Iliyas",
+  "license": "ISC",
+  "dependencies": {
+    "@decorators/express": "^2.3.0",
+    "@overnightjs/core": "^1.4.2",
+    "@tsed/common": "^5.6.0",
+    "@tsed/core": "^5.6.0",
+    "@types/node": "^11.13.0",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "knex": "^0.13.0",
+    "morgan": "^1.9.1",
+    "pg": "^7.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3",
+    "@types/express": "^4.16.1",
+    "@types/morgan": "^1.7.35",
+    "@types/knex": "0.0.61",
+    "tslint": "^5.11.0",
+    "ts-node-dev": "^1.0.0-pre.32",
+    "typescript": "^3.3.4000"
+  }
+}
